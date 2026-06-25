@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QuizPulse — Interactive Quiz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg-glow"></div>
+
+<main class="stage">
+
+  <!-- START SCREEN -->
+  <section class="screen start-screen" id="start-screen">
+    <span class="eyebrow">General Knowledge</span>
+    <h1 class="title">Quiz<span class="title-accent">Pulse</span></h1>
+    <p class="subtitle">10 questions. 15 seconds each. No second-guessing.</p>
+    <div class="start-meta">
+      <div class="meta-item"><span class="meta-num">10</span><span class="meta-label">Questions</span></div>
+      <div class="meta-item"><span class="meta-num">15s</span><span class="meta-label">Per question</span></div>
+      <div class="meta-item"><span class="meta-num">1</span><span class="meta-label">Attempt</span></div>
+    </div>
+    <button class="btn btn-primary" id="start-btn">Start quiz</button>
+  </section>
+
+  <!-- QUIZ SCREEN -->
+  <section class="screen quiz-screen" id="quiz-screen" hidden>
+    <header class="quiz-header">
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <div class="quiz-meta-row">
+        <span class="q-counter" id="q-counter">Question 1 / 10</span>
+        <div class="timer-ring">
+          <svg viewBox="0 0 64 64" class="timer-svg">
+            <circle cx="32" cy="32" r="28" class="timer-track"></circle>
+            <circle cx="32" cy="32" r="28" class="timer-arc" id="timer-arc"></circle>
+          </svg>
+          <span class="timer-num" id="timer-num">15</span>
+        </div>
+      </div>
+    </header>
+
+    <h2 class="question-text" id="question-text">Question text goes here</h2>
+
+    <div class="options" id="options"></div>
+
+    <button class="btn btn-ghost" id="next-btn" disabled>Next question</button>
+  </section>
+
+  <!-- RESULT SCREEN -->
+  <section class="screen result-screen" id="result-screen" hidden>
+    <span class="eyebrow" id="result-eyebrow">Quiz complete</span>
+    <div class="score-ring">
+      <svg viewBox="0 0 120 120" class="score-svg">
+        <circle cx="60" cy="60" r="52" class="score-track"></circle>
+        <circle cx="60" cy="60" r="52" class="score-arc" id="score-arc"></circle>
+      </svg>
+      <div class="score-center">
+        <span class="score-num" id="score-num">0</span>
+        <span class="score-out">/ 10</span>
+      </div>
+    </div>
+    <p class="result-line" id="result-line">Let's see how you did.</p>
+    <button class="btn btn-primary" id="restart-btn">Try again</button>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
